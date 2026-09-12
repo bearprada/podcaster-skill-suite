@@ -5,8 +5,8 @@ audio-reel-renders/
 sample-reel-renders/
 synced-reel-renders/
 reference-style-reel.concat.txt
+final-cut-export/media/layers/*.svg
 
 # Local/editor/system files
 .DS_Store
 *.fcpxmld/
-
