@@ -3,9 +3,15 @@
 <fcpxml version="1.9">
   <resources>
     <format id="r1" name="FFVideoFormat1080x1920p30" frameDuration="1/30s" width="1080" height="1920" colorSpace="1-1-1 (Rec. 709)"/>
-    <asset id="r2" name="Reference Render" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/sample-reference-style-reel.mp4" start="0s" duration="29.76s" hasVideo="1" hasAudio="1" format="r1" audioSources="1" audioChannels="2" audioRate="48000"/>
-    <asset id="r3" name="Original Audio Excerpt" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/槍擊埋下的23年真相_口播精剪.mp3" start="0s" duration="38.672s" hasAudio="1" audioSources="1" audioChannels="2" audioRate="48000"/>
-    <asset id="r4" name="Host Portrait" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/host-portrait.png" start="0s" duration="29.76s" hasVideo="1" format="r1"/>
+    <asset id="r2" name="Reference Render" start="0s" duration="29.76s" hasVideo="1" hasAudio="1" format="r1" audioSources="1" audioChannels="2" audioRate="48000">
+      <media-rep kind="original-media" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/sample-reference-style-reel.mp4"/>
+    </asset>
+    <asset id="r3" name="Original Audio Excerpt" start="0s" duration="38.672s" hasAudio="1" audioSources="1" audioChannels="2" audioRate="48000">
+      <media-rep kind="original-media" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/槍擊埋下的23年真相_口播精剪.mp3"/>
+    </asset>
+    <asset id="r4" name="Host Portrait" start="0s" duration="29.76s" hasVideo="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/host-portrait.png"/>
+    </asset>
   </resources>
   <library>
     <event name="槍擊埋下的23年真相 - Reel">
