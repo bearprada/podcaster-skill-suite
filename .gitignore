@@ -1,0 +1,12 @@
+# Rebuildable render intermediates
+reference-style-reel-assets/
+reference-style-reel-renders/
+audio-reel-renders/
+sample-reel-renders/
+synced-reel-renders/
+reference-style-reel.concat.txt
+
+# Local/editor/system files
+.DS_Store
+*.fcpxmld/
+

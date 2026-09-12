@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0B1020"/>
+  <rect x="48" y="48" width="984" height="984" rx="28" fill="#161E38"/>
+  <rect x="48" y="48" width="12" height="984" fill="#FF5A5F"/>
+  <rect x="60" y="48" width="972" height="12" fill="#16C1B7"/>
+  <text x="100" y="132" fill="#FFFFFF" font-family="PingFang TC, Arial Unicode MS" font-size="32" font-weight="700">PODCASTER / TRUE STORY</text>
+  <text x="100" y="300" fill="#16C1B7" font-family="PingFang TC, Arial Unicode MS" font-size="34">口播精剪</text>
+  <text x="100" y="470" fill="#FFFFFF" font-family="PingFang TC, Arial Unicode MS" font-size="82" font-weight="700">槍擊案</text>
+  <text x="100" y="565" fill="#FFFFFF" font-family="PingFang TC, Arial Unicode MS" font-size="82" font-weight="700">埋下的</text>
+  <text x="100" y="660" fill="#FFB35C" font-family="PingFang TC, Arial Unicode MS" font-size="82" font-weight="700">23年真相</text>
+  <ellipse cx="815" cy="475" rx="150" ry="190" fill="#0B1020" stroke="#16C1B7" stroke-width="8"/>
+  <circle cx="815" cy="420" r="74" fill="#D9A27E"/>
+  <path d="M730 710 Q815 520 900 710 L930 885 L700 885 Z" fill="#FF5A5F"/>
+  <path d="M755 400 Q815 320 875 400 Q850 350 815 350 Q775 350 755 400" fill="#1A1A24"/>
+  <text x="100" y="935" fill="#FFFFFF" font-family="PingFang TC, Arial Unicode MS" font-size="30">字幕風格示範</text>
+</svg>

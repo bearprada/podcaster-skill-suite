@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0B1020"/>
+  <rect x="48" y="48" width="984" height="984" rx="28" fill="#161E38"/>
+  <rect x="48" y="48" width="12" height="984" fill="#FF5A5F"/>
+  <rect x="60" y="48" width="972" height="12" fill="#16C1B7"/>
+  <text x="540" y="390" text-anchor="middle" fill="#FFFFFF" font-family="PingFang TC, Arial Unicode MS" font-size="78" font-weight="700">完整口播精剪</text>
+  <text x="540" y="505" text-anchor="middle" fill="#16C1B7" font-family="PingFang TC, Arial Unicode MS" font-size="48">槍擊埋下的 23 年真相</text>
+  <rect x="290" y="650" width="500" height="92" rx="46" fill="#FFB35C"/>
+  <text x="540" y="712" text-anchor="middle" fill="#0B1020" font-family="Arial" font-size="38" font-weight="700">FULL EPISODE / LINK IN BIO</text>
+  <text x="540" y="915" text-anchor="middle" fill="#FFFFFF" font-family="Arial" font-size="32">@podcaster</text>
+</svg>

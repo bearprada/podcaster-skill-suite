@@ -1,0 +1,4 @@
+interface:
+  display_name: Podcast Production
+  short_description: Polish podcast audio and create highlight reels
+  default_prompt: Post-process my podcast audio and create a highlight reel from the strongest moments.
