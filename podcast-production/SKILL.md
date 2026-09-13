@@ -49,6 +49,30 @@ Manually verify names, film titles, subtitles, jargon, caption line breaks, face
 
 Completion criterion: one reviewable reel or Instagram post is exported with its caption/copy, source timecode, episode-link placeholder, and unresolved issues listed.
 
+### 6. Rebuild a reel from a reference
+
+When the user provides an Instagram post, video, screenshot, or other reference, inspect it if accessible and turn the reference into a production brief rather than copying it blindly. Record the reference URL or file, access date, aspect ratio, duration, visual rhythm, typography, caption treatment, audio treatment, and any copyright or attribution concern.
+
+Break the target into an explicit layer map before editing:
+
+- background or primary footage
+- foreground title, logo, frame, gradient, and decorative effects
+- speaker, avatar, or portrait layer
+- caption/text layer
+- audio, music, and sound effects
+
+For each highlight segment, record start/end time, spoken text, caption text and line breaks, active assets, position, scale, rotation, opacity, transition, and the animation curve or keyframe intent. Use this map to keep speech, captions, avatar changes, and motion on the same frame grid. If a reference is inaccessible, state that it is a visual inference and ask for a screenshot or downloaded sample only when the missing detail changes the design.
+
+Completion criterion: a reference breakdown and a segment-by-segment layer/animation plan exist before the final render or editable project is built.
+
+### 7. Export an editable Final Cut Pro project
+
+When the user requests Final Cut Pro or editable layers, preserve separate layers and captions in FCPXML, plus a reviewable flattened MP4 fallback. Read [references/final-cut-pro.md](references/final-cut-pro.md) for the compatibility and validation rules. Use a project-specific media folder and a README that names every layer and its source.
+
+Import the generated XML into the installed Final Cut Pro version as a real smoke test. Check the import dialog for warnings, confirm the project opens, and verify that the timeline exposes the background, caption lane, avatar clips, foreground, and dialogue audio as separate items. If import fails or FCP crashes, keep the original XML, capture the error or crash signature, reduce the structure to a minimal reproducer, and revise the exporter before delivering another XML.
+
+Completion criterion: the editable XML passes XML validation, imports into the user's installed FCP without a crash, exposes the promised editable layers, and is packaged with media, README, fallback render, and a recorded validation result.
+
 ## Source inspection and audio rules
 
 Before editing, identify input files, duration, channels, sample rate, video presence, and available tools. Ask only for choices that materially affect output: target platform/aspect ratio, desired length, brand assets, and exact loudness target.
@@ -70,5 +94,7 @@ Keep the original media. Do not invent missing words, aggressively denoise music
 - Rough cut: reviewable long-form edit plus edit decision list.
 - Podcast package: clean spoken-word master, compressed listening copy, metadata, show notes, and QA note.
 - Social package: a 30–60 second 9:16 captioned H.264/AAC MP4, or a 4:5/square Instagram post with copy and CTA.
+- Reference breakdown: reference metadata, layer map, animation notes, typography/caption notes, and segment timing plan.
+- Editable project: FCPXML, linked media folder, editable captions and layers, flattened fallback render, README, and import-validation note.
 
-Use `scripts/inspect_media.sh` when inspecting local media. Read `references/workflow.md` when setting up an episode folder, preparing the topic brief, or validating exports.
+Use `scripts/inspect_media.sh` when inspecting local media. Read `references/workflow.md` when setting up an episode folder, preparing the topic brief, or validating exports. Read `references/final-cut-pro.md` when the user requests an editable Final Cut project, supplies a visual reference for a layered reel, or reports an FCPXML import error/crash.
