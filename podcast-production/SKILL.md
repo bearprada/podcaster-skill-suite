@@ -98,3 +98,9 @@ Keep the original media. Do not invent missing words, aggressively denoise music
 - Editable project: FCPXML, linked media folder, editable captions and layers, flattened fallback render, README, and import-validation note.
 
 Use `scripts/inspect_media.sh` when inspecting local media. Read `references/workflow.md` when setting up an episode folder, preparing the topic brief, or validating exports. Read `references/final-cut-pro.md` when the user requests an editable Final Cut project, supplies a visual reference for a layered reel, or reports an FCPXML import error/crash.
+
+## Output storage
+
+Store generated deliverables in the local, Git-ignored `output/` folder. Organize them as `output/audio/`, `output/captions/`, `output/reels/`, `output/final-cut/`, `output/review/`, and `output/notes/`. Keep original media, reusable scripts, skill instructions, project manifests, and reproducible recipes tracked; keep rendered media, exports, temporary conversions, and platform upload packages local unless the user explicitly asks to commit or upload them.
+
+At handoff, report the output paths and validation status. Do not stage or commit anything under `output/` as part of the normal workflow.

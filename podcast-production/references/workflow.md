@@ -34,6 +34,20 @@ episode-work/
   notes/        # episode brief, edit list, metadata, and QA notes
 ```
 
+Repository-level generated deliverables belong in the ignored local folder:
+
+```text
+output/
+  audio/       # podcast masters and listening copies
+  captions/    # SRT, WebVTT, and caption backups
+  reels/       # vertical MP4s and review renders
+  final-cut/   # FCPXML, linked project media, and ZIP packages
+  review/      # reviewer copies and visual checks
+  notes/       # edit lists, metadata, QA, and reference breakdowns
+```
+
+Keep this output folder local. Track the recipe and project description, not rendered output media, unless the user explicitly requests versioning of a specific artifact.
+
 ## Tool roles
 
 - `ffprobe`/`ffmpeg`: inspect media, extract audio, sync or trim, resize, encode, and mux captions.

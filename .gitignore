@@ -1,11 +1,9 @@
 # Rebuildable render intermediates
-reference-style-reel-assets/
-reference-style-reel-renders/
-audio-reel-renders/
-sample-reel-renders/
-synced-reel-renders/
+final-cut-export/*
+
+# Generated output artifacts are local working files, not Git deliverables
+output/
 reference-style-reel.concat.txt
-final-cut-export/media/layers/*.svg
 
 # Local/editor/system files
 .DS_Store
