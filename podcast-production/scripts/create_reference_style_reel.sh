@@ -1,15 +1,36 @@
 #!/bin/bash
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")" && pwd)"
-SOURCE_AUDIO="/Users/prada/Desktop/槍擊埋下的23年真相_口播精剪.mp3"
-SOURCE_IMAGE="/Users/prada/.codex/generated_images/01a0954b-9097-7a20-aa0e-219edc2cb1b0/exec-8956d29a-1ebf-43f7-bfc4-8bc889c23b54.png"
-ASSET_DIR="$ROOT/reference-style-reel-assets"
-RENDER_DIR="$ROOT/reference-style-reel-renders"
-LIST_FILE="$ROOT/reference-style-reel.concat.txt"
-OUTPUT="$ROOT/sample-槍擊埋下的23年真相-reference-style-reel.mp4"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+OUTPUT_ROOT="${OUTPUT_ROOT:-$REPO_ROOT/output}"
 
-mkdir -p "$ASSET_DIR" "$RENDER_DIR"
+if [[ "$#" -lt 2 || "$#" -gt 4 ]]; then
+  echo "Usage: $0 SOURCE_AUDIO SOURCE_IMAGE [OUTPUT_MP4] [CAPTIONS_FILE]" >&2
+  exit 2
+fi
+
+SOURCE_AUDIO="$1"
+SOURCE_IMAGE="$2"
+OUTPUT="${3:-$OUTPUT_ROOT/reels/reference-style-reel.mp4}"
+CAPTIONS_FILE="${4:-}"
+ASSET_DIR="${ASSET_DIR:-$OUTPUT_ROOT/review/reference-style-reel-assets}"
+RENDER_DIR="${RENDER_DIR:-$OUTPUT_ROOT/review/reference-style-reel-renders}"
+LIST_FILE="${LIST_FILE:-$OUTPUT_ROOT/notes/reference-style-reel.concat.txt}"
+CAPTION_OUTPUT="${CAPTION_OUTPUT:-$OUTPUT_ROOT/captions/reference-style-captions.srt}"
+FFMPEG_BIN="${FFMPEG_BIN:-$(command -v ffmpeg || true)}"
+FFPROBE_BIN="${FFPROBE_BIN:-$(command -v ffprobe || true)}"
+
+if [[ -z "$FFMPEG_BIN" || -z "$FFPROBE_BIN" ]]; then
+  echo "ffmpeg and ffprobe are required; set FFMPEG_BIN/FFPROBE_BIN or install them." >&2
+  exit 127
+fi
+if [[ ! -f "$SOURCE_AUDIO" || ! -f "$SOURCE_IMAGE" ]]; then
+  echo "SOURCE_AUDIO and SOURCE_IMAGE must be existing files." >&2
+  exit 2
+fi
+
+mkdir -p "$ASSET_DIR" "$RENDER_DIR" "$(dirname "$LIST_FILE")" "$(dirname "$OUTPUT")" "$(dirname "$CAPTION_OUTPUT")"
 cp "$SOURCE_IMAGE" "$ASSET_DIR/host-portrait.png"
 
 PORTRAIT_DATA="$(base64 < "$ASSET_DIR/host-portrait.png" | tr -d '\n')"
@@ -120,10 +141,12 @@ duration 3.28
 file '$RENDER_DIR/frame-11.svg.png'
 EOF
 
-cp "$ROOT/synced-captions.srt" "$ROOT/reference-style-captions.srt"
+if [[ -n "$CAPTIONS_FILE" ]]; then
+  cp "$CAPTIONS_FILE" "$CAPTION_OUTPUT"
+fi
 
-/opt/homebrew/bin/ffmpeg -y -f concat -safe 0 -i "$LIST_FILE" -ss 8.70 -t 29.76 -i "$SOURCE_AUDIO" -loop 1 -i "$ASSET_DIR/host-portrait.png" \
+"$FFMPEG_BIN" -y -f concat -safe 0 -i "$LIST_FILE" -ss 8.70 -t 29.76 -i "$SOURCE_AUDIO" -loop 1 -i "$ASSET_DIR/host-portrait.png" \
   -filter_complex "[2:v]scale=1080:1920,gblur=sigma=34[bgv];[0:v]scale=1080:1080[fgv];[bgv][fgv]overlay=0:420:shortest=1,format=yuv420p[v]" -map "[v]" -map 1:a \
   -r 30 -c:v libx264 -preset medium -crf 18 -c:a aac -b:a 192k -ar 48000 -ac 2 -shortest "$OUTPUT"
 
-/opt/homebrew/bin/ffprobe -v error -show_entries format=duration:stream=codec_name,width,height,sample_rate,channels -of default=noprint_wrappers=1 "$OUTPUT"
+"$FFPROBE_BIN" -v error -show_entries format=duration:stream=codec_name,width,height,sample_rate,channels -of default=noprint_wrappers=1 "$OUTPUT"

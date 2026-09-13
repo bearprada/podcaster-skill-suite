@@ -1,10 +1,25 @@
 #!/bin/bash
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")" && pwd)"
-MEDIA_DIR="$ROOT/final-cut-export/media"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+OUTPUT_ROOT="${OUTPUT_ROOT:-$REPO_ROOT/output}"
+MEDIA_DIR="${MEDIA_DIR:-$OUTPUT_ROOT/final-cut/project/media}"
 LAYER_DIR="$MEDIA_DIR/layers"
-PORTRAIT="$MEDIA_DIR/host-portrait.png"
+PORTRAIT="${PORTRAIT:-$MEDIA_DIR/host-portrait.png}"
+BACKGROUND="${BACKGROUND:-$MEDIA_DIR/background-uk-venue.png}"
+FFMPEG_BIN="${FFMPEG_BIN:-$(command -v ffmpeg || true)}"
+QLMANAGE_BIN="${QLMANAGE_BIN:-$(command -v qlmanage || true)}"
+
+if [[ -z "$FFMPEG_BIN" || -z "$QLMANAGE_BIN" ]]; then
+  echo "ffmpeg and qlmanage are required; set FFMPEG_BIN/QLMANAGE_BIN or install them." >&2
+  exit 127
+fi
+if [[ ! -f "$PORTRAIT" || ! -f "$BACKGROUND" ]]; then
+  echo "Usage: PORTRAIT=/path/portrait.png BACKGROUND=/path/background.png $0" >&2
+  echo "Expected portrait and background inputs; set MEDIA_DIR to change the project media folder." >&2
+  exit 2
+fi
 
 mkdir -p "$LAYER_DIR"
 
@@ -50,12 +65,12 @@ for i in $(seq 1 11); do
 EOF
 done
 
-/usr/bin/qlmanage -t -s 1080 -o "$LAYER_DIR" "$LAYER_DIR/foreground-overlay.svg" "$LAYER_DIR"/avatar-head-*.svg >/dev/null 2>&1
+"$QLMANAGE_BIN" -t -s 1080 -o "$LAYER_DIR" "$LAYER_DIR/foreground-overlay.svg" "$LAYER_DIR"/avatar-head-*.svg >/dev/null 2>&1
 
 make_alpha_png() {
   local input="$1"
   local output="${input%.png}.alpha.png"
-  /opt/homebrew/bin/ffmpeg -y -i "$input" -vf 'colorkey=0x00ff01:0.01:0.0,format=rgba' -frames:v 1 "$output" >/dev/null 2>&1
+  "$FFMPEG_BIN" -y -i "$input" -vf 'colorkey=0x00ff01:0.01:0.0,format=rgba' -frames:v 1 "$output" >/dev/null 2>&1
   mv -f "$output" "$input"
 }
 
@@ -71,4 +86,6 @@ for i in $(seq 1 11); do
   mv -f "$LAYER_DIR/avatar-head-$n.svg.png" "$LAYER_DIR/avatar-head-$n.png"
 done
 
-cp /Users/prada/.codex/generated_images/01a0736a-caee-7702-b74e-63350941ba78/exec-53afbaf4-a5be-4f6c-8ff7-1b8eb67ee5de.png "$LAYER_DIR/background-uk-venue.png"
+if [[ "$BACKGROUND" != "$LAYER_DIR/background-uk-venue.png" ]]; then
+  cp "$BACKGROUND" "$LAYER_DIR/background-uk-venue.png"
+fi

@@ -38,6 +38,10 @@ Repository-level generated deliverables belong in the ignored local folder:
 
 ```text
 output/
+  input/       # source recordings and supplied assets
+    audio/
+    video/
+    images/
   audio/       # podcast masters and listening copies
   captions/    # SRT, WebVTT, and caption backups
   reels/       # vertical MP4s and review renders
@@ -47,6 +51,23 @@ output/
 ```
 
 Keep this output folder local. Track the recipe and project description, not rendered output media, unless the user explicitly requests versioning of a specific artifact.
+
+For a clean repository commit, use explicit paths such as:
+
+```sh
+./podcast-production/scripts/inspect_media.sh output/input/audio/recording.wav
+./podcast-production/scripts/create_reference_style_reel.sh \
+  output/input/audio/highlight.mp3 \
+  output/input/images/host-portrait.png \
+  output/reels/reference-reel.mp4 \
+  output/captions/highlight.srt
+MEDIA_DIR=output/final-cut/project/media \
+PORTRAIT=output/input/images/host-portrait.png \
+BACKGROUND=output/input/images/background.png \
+./podcast-production/scripts/create_editable_fcp_layers.sh
+```
+
+Stage skill code and documentation explicitly. Keep `output/` untracked so a commit contains the reproducible process rather than large or personal media.
 
 ## Tool roles
 

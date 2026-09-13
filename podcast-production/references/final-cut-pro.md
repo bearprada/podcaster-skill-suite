@@ -51,7 +51,7 @@ Convert decimal seconds to the sequence frame rate before writing timeline offse
 
 ## Crash-safe FCPXML shape
 
-This workspace was tested with Final Cut Pro 10.8.1 on Apple Silicon. The importer crashed with `EXC_CRASH (SIGABRT)` in `FFXMLImporter(AssetClipImport) addAssetClip` when the generated timeline used nested or connected `asset-clip` elements. The stable shape used for the verified export is:
+Known regression: Final Cut Pro 10.8.1 on Apple Silicon crashed with `EXC_CRASH (SIGABRT)` in `FFXMLImporter(AssetClipImport) addAssetClip` when the generated timeline used nested or connected `asset-clip` elements. Treat this as a conservative compatibility baseline; detect the installed target version and smoke-test that version before delivery. The stable shape used for the verified export is:
 
 ```xml
 <spine>

@@ -1,8 +1,15 @@
-# Rebuildable render intermediates
-final-cut-export/*
+# Local episode inputs and generated media
+output/
+
+# Legacy root output locations; new work belongs under output/
+final-cut-export/
+audio-reel-assets/
+sample-reel-assets/
+synced-reel-assets/
+reference-style-reel-assets/
+reference-style-reel-renders/
 
 # Generated output artifacts are local working files, not Git deliverables
-output/
 reference-style-reel.concat.txt
 
 # Local/editor/system files

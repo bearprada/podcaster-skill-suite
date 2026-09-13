@@ -1,4 +1,4 @@
 interface:
   display_name: Podcast Production
-  short_description: Polish podcast audio and create highlight reels
-  default_prompt: Post-process my podcast audio and create a highlight reel from the strongest moments.
+  short_description: Produce podcast audio, reference-driven reels, and editable Final Cut projects
+  default_prompt: Run the needed podcast production stage, store generated files in output, and prepare an editable reel when requested.

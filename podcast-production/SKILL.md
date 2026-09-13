@@ -1,11 +1,26 @@
 ---
 name: podcast-production
-description: "Run a weekly UK–Taiwan film and entertainment podcast workflow: develop timely topics, rough-cut 2–3 hour audio/video recordings, prepare podcast publishing assets, and create a highlight reel or Instagram post."
+description: "Run UK–Taiwan film and entertainment podcast workflows: develop topics, rough-cut recordings, create reference-driven reels, and package editable Final Cut Pro projects."
 ---
 
 # Podcast Production
 
 Use this skill for a recurring podcast about the UK and Taiwan movie or entertainment industries. The normal run starts with topic development and ends with a publish-ready podcast package plus one social highlight. Preserve an untouched original recording. If the user asks for only one stage, perform only that stage unless another is required for the requested deliverable.
+
+## Choose the mode
+
+Start by identifying the requested mode and deliverable. Run only the branches needed:
+
+- **Topic**: research and prepare an episode brief.
+- **Audio**: inspect, rough-cut, post-process, and QA a recording.
+- **Reel**: select a highlight and create a captioned social video.
+- **Reference**: analyze a supplied Reel/link and produce a layer and animation plan.
+- **Final Cut**: export and smoke-test an editable FCPXML project.
+- **Recovery**: diagnose a failed import or sync problem using the smallest useful reproducer.
+
+Use the user's chosen tools when available. Treat Descript, FFmpeg, speech-to-text, NLEs, and publishing platforms as interchangeable implementation options; inspect what is installed before assuming a command or connector exists. Resolve paths from the current project or explicit user inputs. Keep machine-specific paths, temporary files, and service credentials out of the skill and generated project files.
+
+If a choice is missing, use these defaults and state them briefly: 9:16 reel, 30–60 seconds, 30 fps for editable vertical projects, original language captions unless translation is requested, and local `output/` for generated files. Ask only when the missing choice materially changes the deliverable.
 
 ## Weekly workflow
 
@@ -101,6 +116,14 @@ Use `scripts/inspect_media.sh` when inspecting local media. Read `references/wor
 
 ## Output storage
 
-Store generated deliverables in the local, Git-ignored `output/` folder. Organize them as `output/audio/`, `output/captions/`, `output/reels/`, `output/final-cut/`, `output/review/`, and `output/notes/`. Keep original media, reusable scripts, skill instructions, project manifests, and reproducible recipes tracked; keep rendered media, exports, temporary conversions, and platform upload packages local unless the user explicitly asks to commit or upload them.
+Store all episode input and output media in the local, Git-ignored `output/` folder. Put source recordings and supplied assets in `output/input/`; organize generated material as `output/audio/`, `output/captions/`, `output/reels/`, `output/final-cut/`, `output/review/`, and `output/notes/`. Keep reusable scripts, skill instructions, project manifests, and reproducible recipes tracked; keep source media, rendered media, exports, temporary conversions, and platform upload packages local unless the user explicitly asks to commit or upload them.
 
 At handoff, report the output paths and validation status. Do not stage or commit anything under `output/` as part of the normal workflow.
+
+For the bundled helpers, use explicit inputs and output paths so another developer can run them from any checkout:
+
+- `scripts/inspect_media.sh INPUT`
+- `scripts/create_reference_style_reel.sh AUDIO IMAGE [OUTPUT_MP4] [CAPTIONS_FILE]`
+- `MEDIA_DIR=... PORTRAIT=... BACKGROUND=... scripts/create_editable_fcp_layers.sh`
+
+The reference Reel helper is a style-specific starting template, not a universal editor. Change its caption, timing, and motion arrays for a new reference, or replace it with the user's preferred editor while keeping the same layer/animation ledger.
