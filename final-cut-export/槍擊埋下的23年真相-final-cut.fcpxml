@@ -1,77 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fcpxml>
 
-<!-- Editable vertical reel: BG primary; captions lane 1; avatar lane 2; foreground lane 3; dialogue lane -1. -->
+<!-- FCPXML 1.8: all timeline media uses clip/video/audio elements to avoid FCP 10.8.1 nested asset-clip crash. -->
 <fcpxml version="1.8">
   <resources>
     <format id="r1" name="FFVideoFormat1080x1920p30" frameDuration="1/30s" width="1080" height="1920" colorSpace="1-1-1 (Rec. 709)"/>
     <format id="r2" name="FFFrameRateUndefined"/>
-
-    <asset id="r3" name="BG — UK Venue" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/background-uk-venue.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r4" name="FG — Title and Brand" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/foreground-overlay.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-
-    <asset id="r5" name="Avatar Head 01" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-01.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r6" name="Avatar Head 02" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-02.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r7" name="Avatar Head 03" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-03.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r8" name="Avatar Head 04" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-04.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r9" name="Avatar Head 05" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-05.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r10" name="Avatar Head 06" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-06.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r11" name="Avatar Head 07" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-07.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r12" name="Avatar Head 08" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-08.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r13" name="Avatar Head 09" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-09.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r14" name="Avatar Head 10" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-10.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-    <asset id="r15" name="Avatar Head 11" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-11.png" start="0s" duration="29.76s" hasVideo="1" hasAudio="0" format="r1"/>
-
-    <asset id="r16" name="Dialogue — 槍擊埋下的23年真相" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/槍擊埋下的23年真相_口播精剪.mp3" start="0s" duration="29.76s" hasVideo="0" hasAudio="1" format="r2" audioSources="1" audioChannels="2" audioRate="48000"/>
+    <asset id="r3" name="BG — UK Venue" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/background-uk-venue.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r4" name="FG — Title and Brand" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/foreground-overlay.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r5" name="Avatar Head 01" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-01.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r6" name="Avatar Head 02" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-02.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r7" name="Avatar Head 03" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-03.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r8" name="Avatar Head 04" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-04.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r9" name="Avatar Head 05" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-05.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r10" name="Avatar Head 06" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-06.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r11" name="Avatar Head 07" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-07.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r12" name="Avatar Head 08" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-08.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r13" name="Avatar Head 09" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-09.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r14" name="Avatar Head 10" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-10.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r15" name="Avatar Head 11" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/layers/avatar-head-11.png" start="0s" duration="893/30s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="r16" name="Dialogue — 槍擊埋下的23年真相" src="file:///Users/prada/CodexWorkspace/podcaster-skill-suite/final-cut-export/media/槍擊埋下的23年真相_口播精剪.mp3" start="0s" duration="38.672s" hasVideo="0" hasAudio="1" format="r2" audioSources="1" audioChannels="2" audioRate="48000"/>
   </resources>
-
   <library>
     <event name="槍擊埋下的23年真相 — Editable Layers">
-      <project name="Editable Layers + Captions + Avatar Motion — 29.76s">
-        <sequence format="r1" duration="29.76s" tcStart="0s" tcFormat="NDF">
+      <project name="Editable Layers + Captions + Avatar Motion — Safe Import">
+        <sequence format="r1" duration="893/30s" tcStart="0s" tcFormat="NDF">
           <spine>
-            <asset-clip name="BG — UK Venue" ref="r3" format="r1" start="0s" duration="29.76s" videoRole="background">
+            <clip name="BG — UK Venue" format="r1" start="0s" duration="893/30s">
               <adjust-conform type="fill"/>
               <adjust-transform>
-                <param name="scale"><keyframeAnimation><keyframe time="0s" value="1 1" interp="easeIn"/><keyframe time="29.76s" value="1.06 1.06" interp="easeOut"/></keyframeAnimation></param>
+                <param name="scale"><keyframeAnimation><keyframe time="0s" value="1 1"/><keyframe time="893/30s" value="1.06 1.06"/></keyframeAnimation></param>
               </adjust-transform>
+              <video ref="r3" start="0s" duration="893/30s" role="background"/>
 
-              <caption name="01 — 劇情從二十三年前" lane="1" offset="0.08s" start="0s" duration="1.54s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">劇情從二十三年前</text></caption>
-              <caption name="02 — 四個六年級的同班同學" lane="1" offset="1.62s" start="0s" duration="2.34s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">四個六年級的
+              <clip name="Dialogue — 槍擊埋下的23年真相" lane="-1" offset="0s" duration="893/30s"><audio ref="r16" start="261/30s" duration="893/30s" role="dialogue"/></clip>
+
+              <caption name="01 — 劇情從二十三年前" lane="1" offset="2/30s" start="0s" duration="46/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">劇情從二十三年前</text></caption>
+              <caption name="02 — 四個六年級的同班同學" lane="1" offset="48/30s" start="0s" duration="70/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">四個六年級的
 同班同學</text></caption>
-              <caption name="03 — 包含竹內涼真飾演的淳一" lane="1" offset="3.96s" start="0s" duration="2.28s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">包含竹內涼真
+              <caption name="03 — 包含竹內涼真飾演的淳一" lane="1" offset="118/30s" start="0s" duration="68/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">包含竹內涼真
 飾演的淳一</text></caption>
-              <caption name="04 — 以及井上真央飾演的萬季子" lane="1" offset="6.24s" start="0s" duration="2.64s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">以及井上真央
+              <caption name="04 — 以及井上真央飾演的萬季子" lane="1" offset="187/30s" start="0s" duration="79/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">以及井上真央
 飾演的萬季子</text></caption>
-              <caption name="05 — 他們在學校埋下了那把手槍" lane="1" offset="8.88s" start="0s" duration="3.10s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">他們在學校
+              <caption name="05 — 他們在學校埋下了那把手槍" lane="1" offset="266/30s" start="0s" duration="93/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">他們在學校
 埋下了那把手槍</text></caption>
-              <caption name="06 — 槍擊案就此展開" lane="1" offset="11.98s" start="0s" duration="1.28s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">槍擊案就此展開</text></caption>
-              <caption name="07 — 隨後各奔東西" lane="1" offset="13.26s" start="0s" duration="3.66s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">隨後各奔東西，試圖假裝
+              <caption name="06 — 槍擊案就此展開" lane="1" offset="359/30s" start="0s" duration="38/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">槍擊案就此展開</text></caption>
+              <caption name="07 — 隨後各奔東西" lane="1" offset="397/30s" start="0s" duration="109/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">隨後各奔東西，試圖假裝
 一切都沒有發生</text></caption>
-              <caption name="08 — 但二十三年後淳一成為了刑警" lane="1" offset="16.92s" start="0s" duration="3.22s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">但二十三年後
+              <caption name="08 — 但二十三年後淳一成為了刑警" lane="1" offset="507/30s" start="0s" duration="96/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">但二十三年後
 淳一成為了刑警</text></caption>
-              <caption name="09 — 他在現場發現了那把手槍" lane="1" offset="20.14s" start="0s" duration="2.72s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">他在現場發現了
+              <caption name="09 — 他在現場發現了那把手槍" lane="1" offset="604/30s" start="0s" duration="71/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">他在現場發現了
 那把手槍</text></caption>
-              <caption name="10 — 進而揭開二十三年前槍擊案的真相" lane="1" offset="22.86s" start="0s" duration="3.62s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">進而揭開二十三年前
+              <caption name="10 — 進而揭開二十三年前槍擊案的真相" lane="1" offset="675/30s" start="0s" duration="108/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">進而揭開二十三年前
 槍擊案的真相</text></caption>
-              <caption name="11 — 真相終於浮現" lane="1" offset="26.48s" start="0s" duration="3.28s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">二十三年前的槍擊案
+              <caption name="11 — 真相終於浮現" lane="1" offset="784/30s" start="0s" duration="98/30s" role="captions.zh-Hant?captionFormat=ITT.zh-Hant"><text placement="bottom" alignment="center">二十三年前的槍擊案
 真相終於浮現</text></caption>
-            </asset-clip>
 
-            <asset-clip name="Dialogue — 槍擊埋下的23年真相" ref="r16" format="r2" lane="-1" offset="0s" start="8.70s" duration="29.76s" audioRole="dialogue"/>
-            <asset-clip name="Avatar — Head 01 / subtitle 01" ref="r5" format="r1" lane="2" offset="0s" start="0s" duration="1.62s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1 1" rotation="-4"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-4" interp="easeOut"/><keyframe time="1.62s" value="2" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 02 / subtitle 02" ref="r6" format="r1" lane="2" offset="1.62s" start="0s" duration="2.34s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.02 1.02" rotation="2"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="2"/><keyframe time="2.34s" value="-2" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 03 / subtitle 03" ref="r7" format="r1" lane="2" offset="3.96s" start="0s" duration="2.28s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.04 1.04" rotation="-2"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-2"/><keyframe time="2.28s" value="3" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 04 / subtitle 04" ref="r8" format="r1" lane="2" offset="6.24s" start="0s" duration="2.64s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1 1" rotation="3"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="3"/><keyframe time="2.64s" value="-3" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 05 / subtitle 05" ref="r9" format="r1" lane="2" offset="8.88s" start="0s" duration="3.10s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.03 1.03" rotation="-3"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-3"/><keyframe time="3.10s" value="1" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 06 / subtitle 06" ref="r10" format="r1" lane="2" offset="11.98s" start="0s" duration="1.28s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1 1" rotation="1"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="1"/><keyframe time="1.28s" value="-2" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 07 / subtitle 07" ref="r11" format="r1" lane="2" offset="13.26s" start="0s" duration="3.66s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.02 1.02" rotation="-2"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-2"/><keyframe time="3.66s" value="3" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 08 / subtitle 08" ref="r12" format="r1" lane="2" offset="16.92s" start="0s" duration="3.22s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.05 1.05" rotation="3"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="3"/><keyframe time="3.22s" value="-4" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 09 / subtitle 09" ref="r13" format="r1" lane="2" offset="20.14s" start="0s" duration="2.72s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.01 1.01" rotation="-4"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-4"/><keyframe time="2.72s" value="2" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 10 / subtitle 10" ref="r14" format="r1" lane="2" offset="22.86s" start="0s" duration="3.62s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.03 1.03" rotation="2"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="2"/><keyframe time="3.62s" value="-1" interp="easeIn"/></keyframeAnimation></param></adjust-transform></asset-clip>
-            <asset-clip name="Avatar — Head 11 / subtitle 11" ref="r15" format="r1" lane="2" offset="26.48s" start="0s" duration="3.28s" videoRole="avatar"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1 1" rotation="-1"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-1"/><keyframe time="3.28s" value="2" interp="easeOut"/></keyframeAnimation></param></adjust-transform></asset-clip>
+              <clip name="Avatar — Head 01 / subtitle 01" lane="2" offset="0s" duration="48/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1 1" rotation="-4"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-4"/><keyframe time="48/30s" value="2"/></keyframeAnimation></param></adjust-transform><video ref="r5" start="0s" duration="48/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 02 / subtitle 02" lane="2" offset="48/30s" duration="70/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.02 1.02" rotation="2"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="2"/><keyframe time="70/30s" value="-2"/></keyframeAnimation></param></adjust-transform><video ref="r6" start="0s" duration="70/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 03 / subtitle 03" lane="2" offset="118/30s" duration="68/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.04 1.04" rotation="-2"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-2"/><keyframe time="68/30s" value="3"/></keyframeAnimation></param></adjust-transform><video ref="r7" start="0s" duration="68/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 04 / subtitle 04" lane="2" offset="187/30s" duration="79/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1 1" rotation="3"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="3"/><keyframe time="79/30s" value="-3"/></keyframeAnimation></param></adjust-transform><video ref="r8" start="0s" duration="79/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 05 / subtitle 05" lane="2" offset="266/30s" duration="93/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.03 1.03" rotation="-3"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-3"/><keyframe time="93/30s" value="1"/></keyframeAnimation></param></adjust-transform><video ref="r9" start="0s" duration="93/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 06 / subtitle 06" lane="2" offset="359/30s" duration="38/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1 1" rotation="1"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="1"/><keyframe time="38/30s" value="-2"/></keyframeAnimation></param></adjust-transform><video ref="r10" start="0s" duration="38/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 07 / subtitle 07" lane="2" offset="397/30s" duration="109/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.02 1.02" rotation="-2"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-2"/><keyframe time="109/30s" value="3"/></keyframeAnimation></param></adjust-transform><video ref="r11" start="0s" duration="109/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 08 / subtitle 08" lane="2" offset="507/30s" duration="96/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.05 1.05" rotation="3"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="3"/><keyframe time="96/30s" value="-4"/></keyframeAnimation></param></adjust-transform><video ref="r12" start="0s" duration="96/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 09 / subtitle 09" lane="2" offset="604/30s" duration="71/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.01 1.01" rotation="-4"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-4"/><keyframe time="71/30s" value="2"/></keyframeAnimation></param></adjust-transform><video ref="r13" start="0s" duration="71/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 10 / subtitle 10" lane="2" offset="675/30s" duration="108/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1.03 1.03" rotation="2"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="2"/><keyframe time="108/30s" value="-1"/></keyframeAnimation></param></adjust-transform><video ref="r14" start="0s" duration="108/30s" role="avatar"/></clip>
+              <clip name="Avatar — Head 11 / subtitle 11" lane="2" offset="784/30s" duration="98/30s"><adjust-conform type="fit"/><adjust-transform position="0 3" scale="1 1" rotation="-1"><param name="rotation"><keyframeAnimation><keyframe time="0s" value="-1"/><keyframe time="98/30s" value="2"/></keyframeAnimation></param></adjust-transform><video ref="r15" start="0s" duration="98/30s" role="avatar"/></clip>
 
-            <asset-clip name="FG — Title and Brand" ref="r4" format="r1" lane="3" offset="0s" start="0s" duration="29.76s" videoRole="foreground"><adjust-conform type="fit"/></asset-clip>
+              <clip name="FG — Title and Brand" lane="3" offset="0s" duration="893/30s"><adjust-conform type="fit"/><video ref="r4" start="0s" duration="893/30s" role="foreground"/></clip>
+            </clip>
           </spine>
         </sequence>
       </project>

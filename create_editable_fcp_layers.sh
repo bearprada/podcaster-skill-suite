@@ -8,15 +8,11 @@ PORTRAIT="$MEDIA_DIR/host-portrait.png"
 
 mkdir -p "$LAYER_DIR"
 
-# This is a visual layer only: subtitles stay in the FCPXML caption lane.
+# Rendered PNG layers use a green key color so transparency survives Quick Look.
 cat > "$LAYER_DIR/foreground-overlay.svg" <<'EOF'
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
-  <defs>
-    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#68c8e8"/>
-      <stop offset="1" stop-color="#f6a6c9"/>
-    </linearGradient>
-  </defs>
+  <rect width="1080" height="1080" fill="#00ff01"/>
+  <defs><linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#68c8e8"/><stop offset="1" stop-color="#f6a6c9"/></linearGradient></defs>
   <rect x="58" y="62" width="10" height="108" rx="5" fill="#68c8e8"/>
   <text x="94" y="103" fill="#f7f4ee" font-family="PingFang TC, Noto Serif CJK TC, serif" font-size="27" letter-spacing="2">POV：一把槍，埋了 23 年</text>
   <text x="94" y="186" fill="#ffffff" font-family="PingFang TC, Noto Serif CJK TC, serif" font-size="54" font-weight="700">槍擊埋下的</text>
@@ -37,6 +33,7 @@ for i in $(seq 1 11); do
   scale="${scales[$((i - 1))]}"
   cat > "$LAYER_DIR/avatar-head-$n.svg" <<EOF
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#00ff01"/>
   <defs>
     <clipPath id="headClip"><circle cx="540" cy="500" r="188"/></clipPath>
     <radialGradient id="halo"><stop offset="0" stop-color="#68c8e8" stop-opacity="0.28"/><stop offset="1" stop-color="#68c8e8" stop-opacity="0"/></radialGradient>
@@ -54,6 +51,19 @@ EOF
 done
 
 /usr/bin/qlmanage -t -s 1080 -o "$LAYER_DIR" "$LAYER_DIR/foreground-overlay.svg" "$LAYER_DIR"/avatar-head-*.svg >/dev/null 2>&1
+
+make_alpha_png() {
+  local input="$1"
+  local output="${input%.png}.alpha.png"
+  /opt/homebrew/bin/ffmpeg -y -i "$input" -vf 'colorkey=0x00ff01:0.01:0.0,format=rgba' -frames:v 1 "$output" >/dev/null 2>&1
+  mv -f "$output" "$input"
+}
+
+make_alpha_png "$LAYER_DIR/foreground-overlay.svg.png"
+for i in $(seq 1 11); do
+  n=$(printf '%02d' "$i")
+  make_alpha_png "$LAYER_DIR/avatar-head-$n.svg.png"
+done
 
 mv -f "$LAYER_DIR/foreground-overlay.svg.png" "$LAYER_DIR/foreground-overlay.png"
 for i in $(seq 1 11); do
