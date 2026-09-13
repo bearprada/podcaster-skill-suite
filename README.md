@@ -7,7 +7,7 @@ Reusable agent workflows for producing a UK–Taiwan film and entertainment podc
 After this repository is pushed to GitHub, install the podcast skill with the `skills` CLI:
 
 ```bash
-npx skills@latest add YOUR_GITHUB_USER/podcaster-skill-suite \
+npx skills@latest add bearprada/podcaster-skill-suite \
   --skill podcast-production \
   --agent codex \
   --global \
@@ -26,7 +26,7 @@ Options:
 To preview what the repository exposes:
 
 ```bash
-npx skills@latest add YOUR_GITHUB_USER/podcaster-skill-suite --list
+npx skills@latest add bearprada/podcaster-skill-suite --list
 ```
 
 To update an installed version:
@@ -39,7 +39,7 @@ The CLI supports GitHub shorthand, full GitHub URLs, and direct skill paths. The
 
 ```bash
 npx skills@latest add \
-  https://github.com/YOUR_GITHUB_USER/podcaster-skill-suite/tree/main/podcast-production \
+https://github.com/bearprada/podcaster-skill-suite/tree/main/podcast-production \
   --agent codex --global --copy --yes
 ```
 
