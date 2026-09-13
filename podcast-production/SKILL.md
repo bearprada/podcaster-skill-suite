@@ -22,6 +22,12 @@ Use the user's chosen tools when available. Treat Descript, FFmpeg, speech-to-te
 
 If a choice is missing, use these defaults and state them briefly: 9:16 reel, 30–60 seconds, 30 fps for editable vertical projects, original language captions unless translation is requested, and local `output/` for generated files. Ask only when the missing choice materially changes the deliverable.
 
+## Multi-agent execution
+
+Use one coordinator to own the episode manifest, decisions, artifact handoffs, and final QA. Delegate independent read-only work in parallel, such as topic research, media inspection, transcript discovery, and reference-style analysis. Serialize dependent work: approved brief → rough cut/transcript → selected highlight → captions/layer ledger → renders or FCPXML → import/export QA.
+
+Give each agent one owned artifact and an explicit completion criterion. Agents should write versioned files into the episode's output area, report the source paths and assumptions, and leave the coordinator's inputs untouched. The coordinator resolves conflicting captions, timings, style interpretations, or metadata before downstream rendering. Read [references/multi-agent.md](references/multi-agent.md) for roles, handoff schema, and concurrency rules.
+
 ## Weekly workflow
 
 ### 1. Develop the topic
@@ -116,7 +122,7 @@ Use `scripts/inspect_media.sh` when inspecting local media. Read `references/wor
 
 ## Output storage
 
-Store all episode input and output media in the local, Git-ignored `output/` folder. Put source recordings and supplied assets in `output/input/`; organize generated material as `output/audio/`, `output/captions/`, `output/reels/`, `output/final-cut/`, `output/review/`, and `output/notes/`. Keep reusable scripts, skill instructions, project manifests, and reproducible recipes tracked; keep source media, rendered media, exports, temporary conversions, and platform upload packages local unless the user explicitly asks to commit or upload them.
+Store all episode input and output media in the local, Git-ignored `output/` folder. For multiple episodes or agents, prefer `output/<episode-slug>/input/`, `audio/`, `captions/`, `reels/`, `final-cut/`, `review/`, and `notes/`; the existing top-level subfolders are acceptable for a single active episode. Keep reusable scripts, skill instructions, project manifests, and reproducible recipes tracked; keep source media, rendered media, exports, temporary conversions, and platform upload packages local unless the user explicitly asks to commit or upload them.
 
 At handoff, report the output paths and validation status. Do not stage or commit anything under `output/` as part of the normal workflow.
 
